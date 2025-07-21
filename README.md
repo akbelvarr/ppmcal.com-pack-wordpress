@@ -1,73 +1,79 @@
-Panduan Impor Konten WordPress dari File XML
-Dokumen ini menjelaskan cara mengimpor konten ke situs WordPress Anda menggunakan file ekspor berformat .xml. File ini biasanya berisi postingan, halaman, komentar, kategori, tag, dan media dari situs WordPress lain.
+# Panduan Impor Konten WordPress dari File .XML
 
-Daftar Isi
-Prasyarat
+Dokumen ini menjelaskan langkah-langkah untuk mengimpor konten ke situs WordPress menggunakan file ekspor berformat `.xml`. File ini umumnya berisi Postingan, Halaman, Komentar, Kategori, Tag, dan data Media dari situs WordPress lain.
 
-Langkah-langkah Impor
+## Daftar Isi
+- [Prasyarat](#prasyarat)
+- [Langkah-langkah Impor](#langkah-langkah-impor)
+- [Pemecahan Masalah (Troubleshooting)](#pemecahan-masalah-troubleshooting)
+- [Catatan Tambahan](#catatan-tambahan)
 
-Pemecahan Masalah (Troubleshooting)
+---
 
-Catatan Tambahan
+## Prasyarat
 
-Prasyarat
-Sebelum memulai, pastikan Anda memiliki:
+Sebelum memulai, pastikan Anda sudah menyiapkan:
+* **Akses Administrator** ke dashboard WordPress tujuan.
+* **File `.xml`** yang sudah diekspor dari situs WordPress sumber. Jika file Anda dalam format `.zip`, ekstrak terlebih dahulu untuk mendapatkan file `.xml`-nya.
 
-Akses Administrator ke dashboard WordPress tujuan.
+---
 
-File .xml yang sudah diekspor dari situs WordPress sumber. Jika file Anda dalam format .zip, ekstrak terlebih dahulu untuk mendapatkan file .xml-nya.
+## Langkah-langkah Impor
 
-Langkah-langkah Impor
-Proses impor dilakukan melalui dashboard WordPress. Berikut adalah langkah-langkahnya:
+Proses impor dilakukan sepenuhnya melalui dashboard WordPress. Ikuti langkah-langkah berikut:
 
-Login ke Dashboard WordPress Masuk ke situs WordPress baru Anda (contoh: namasitusanda.com/wp-admin).
+1.  **Login ke Dashboard WordPress**
+    * Masuk ke area admin situs Anda (contoh: `https://situsanda.com/wp-admin`).
 
-Buka Fitur Impor Dari menu navigasi di sebelah kiri, arahkan kursor ke Peralatan (atau Tools), lalu klik Impor (atau Import).
+2.  **Buka Fitur Impor**
+    * Dari menu navigasi di sebelah kiri, arahkan kursor ke **Peralatan** (atau **Tools**), lalu klik **Impor** (atau **Import**).
 
-Instal WordPress Importer Di halaman Impor, Anda akan melihat daftar berbagai platform. Cari WordPress dan klik Pasang Sekarang (atau Install Now). Proses instalasi ini hanya perlu dilakukan sekali.
+3.  **Instal WordPress Importer**
+    * Di halaman Impor, cari opsi **WordPress** di bagian bawah daftar.
+    * Klik **Pasang Sekarang** (atau **Install Now**). Proses instalasi ini cepat dan hanya perlu dilakukan sekali.
 
-Jalankan Importer Setelah instalasi selesai, tautan akan berubah menjadi Jalankan Pengimpor (atau Run Importer). Klik tautan tersebut untuk memulai.
+4.  **Jalankan Pengimpor (Run Importer)**
+    * Setelah instalasi selesai, tautan akan berubah menjadi **Jalankan Pengimpor** (atau **Run Importer**). Klik tautan tersebut.
 
-Unggah File XML Anda Anda akan diarahkan ke halaman "Impor WordPress".
+5.  **Unggah File XML Anda**
+    * Anda akan diarahkan ke halaman "Impor WordPress".
+    * Klik tombol **Choose File** atau **Pilih Berkas**.
+    * Pilih file `.xml` yang sudah Anda siapkan dari komputer Anda.
+    * Klik tombol **Unggah berkas dan impor** (atau **Upload file and import**).
 
-Klik tombol Choose File atau Pilih Berkas.
+6.  **Atur Penulis dan Lampiran**
+    * Setelah file berhasil diunggah, Anda akan masuk ke halaman "Tetapkan Penulis" (Assign Authors).
+    * **Tetapkan Penulis (Assign Authors):** Anda dapat menetapkan konten dari pengguna lama ke pengguna yang sudah ada di situs baru, atau membuat pengguna baru secara otomatis.
+    * **Impor Lampiran (Import Attachments):** **PENTING!** Beri tanda centang pada opsi **"Unduh dan impor lampiran file"** (atau **"Download and import file attachments"**). Ini akan memastikan semua gambar dan media dari konten Anda ikut terimpor.
 
-Pilih file .xml yang sudah Anda siapkan dari komputer Anda.
+7.  **Selesaikan Proses**
+    * Klik tombol **Kirim** (atau **Submit**).
+    * Proses impor akan berjalan. Lamanya proses tergantung pada ukuran file `.xml` dan jumlah lampiran media. Setelah selesai, Anda akan melihat pesan konfirmasi.
 
-Klik tombol Unggah berkas dan impor (atau Upload file and import).
+---
 
-Atur Penulis dan Lampiran Setelah file berhasil diunggah, Anda akan melihat halaman "Tetapkan Penulis" (Assign Authors):
+## Pemecahan Masalah (Troubleshooting)
 
-Tetapkan Penulis: Anda bisa menetapkan konten dari pengguna di situs lama ke pengguna yang ada di situs baru. Anda juga bisa membuat pengguna baru dengan nama yang sama.
+Berikut adalah beberapa masalah umum yang mungkin terjadi dan cara mengatasinya:
 
-Impor Lampiran: Beri tanda centang pada opsi Unduh dan impor lampiran file (atau Download and import file attachments). Ini sangat penting agar semua gambar dan media dari konten Anda ikut terimpor.
+* **Gagal Impor karena Ukuran File Terlalu Besar**
+    * **Masalah:** File `.xml` Anda lebih besar dari batas unggah maksimum server (misalnya 2MB, 8MB).
+    * **Solusi:** Hubungi penyedia hosting Anda dan minta untuk menaikkan nilai `upload_max_filesize`, `post_max_size`, dan `memory_limit` pada konfigurasi PHP server Anda.
 
-Selesaikan Proses Impor Klik tombol Kirim (atau Submit). Proses impor akan berjalan. Lamanya proses tergantung pada ukuran file .xml dan jumlah lampiran media. Setelah selesai, Anda akan melihat pesan konfirmasi.
+* **Proses Impor Berhenti di Tengah Jalan (Timeout)**
+    * **Masalah:** Untuk file yang sangat besar, skrip impor bisa berhenti karena melampaui batas waktu eksekusi (`max_execution_time`).
+    * **Solusi:** Minta penyedia hosting Anda untuk menaikkan batas `max_execution_time`.
 
-Pemecahan Masalah (Troubleshooting)
-Terkadang, proses impor dapat mengalami kendala. Berikut adalah beberapa masalah umum dan solusinya:
+* **Gambar atau Media Gagal Diimpor**
+    * **Masalah:** Konten teks berhasil diimpor, tetapi gambar tidak muncul.
+    * **Solusi:**
+        1.  Pastikan Anda mencentang opsi "Unduh dan impor lampiran file" pada langkah 6.
+        2.  Pastikan situs sumber (situs lama) masih dapat diakses secara publik agar situs baru bisa mengunduh gambar.
+        3.  Periksa izin folder `wp-content/uploads` di hosting Anda. Seharusnya diatur ke `755`.
 
-Gagal Impor karena Ukuran File Terlalu Besar Jika file .xml Anda lebih besar dari batas unggah maksimum server (misalnya, 2MB), proses impor akan gagal.
+---
 
-Solusi: Hubungi penyedia hosting Anda untuk meminta kenaikan batas upload_max_filesize, post_max_size, dan memory_limit pada konfigurasi PHP server Anda.
+## Catatan Tambahan
 
-Proses Impor Memakan Waktu Terlalu Lama (Timeout) Untuk file yang sangat besar, skrip impor bisa berhenti karena melampaui batas waktu eksekusi (max_execution_time).
-
-Solusi: Sama seperti masalah ukuran file, minta penyedia hosting Anda untuk menaikkan batas waktu eksekusi skrip PHP.
-
-Gambar atau Media Tidak Muncul (Gagal Impor Lampiran) Ini bisa terjadi jika situs sumber tidak lagi aktif atau direktori uploads di situs baru tidak memiliki izin tulis (write permission).
-
-Solusi:
-
-Pastikan Anda mencentang opsi "Unduh dan impor lampiran file" pada langkah 6.
-
-Pastikan situs sumber masih dapat diakses secara publik jika memungkinkan.
-
-Periksa izin folder wp-content/uploads di hosting Anda. Seharusnya diatur ke 755.
-
-Catatan Tambahan
-Proses impor ini tidak memindahkan tema, plugin, atau pengaturan widget. Anda perlu menginstal tema dan plugin secara manual di situs baru.
-
-Jika Anda memindahkan konten dari WordPress.com, prosesnya pada dasarnya sama. Anda hanya perlu mengekspor data dari akun WordPress.com Anda terlebih dahulu.
-
-Untuk migrasi situs yang lengkap (termasuk tema, plugin, dan pengaturan), disarankan menggunakan plugin migrasi seperti Duplicator, All-in-One WP Migration, atau sejenisnya.
+* Proses impor ini **tidak** memindahkan tema, plugin, atau pengaturan widget. Anda perlu menginstal dan mengonfigurasi tema serta plugin secara manual di situs baru.
+* Metode ini adalah cara standar WordPress untuk memindahkan konten. Untuk migrasi situs secara keseluruhan (termasuk tema, plugin, dan pengaturan), disarankan menggunakan plugin migrasi khusus seperti **All-in-One WP Migration** atau **Duplicator**.
